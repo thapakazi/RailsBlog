@@ -8,10 +8,10 @@ RSpec.feature 'Sign up user' do
 
     fill_in 'Email', with: 'tolsee3@gmail.com'
     fill_in 'Password', with: 'thisisthe'
-    fill_in 'Confirm Password', with: 'thisisthe'
-    click_button 'Sign Up'
+    fill_in 'Password confirmation', with: 'thisisthe'
+    click_button 'Sign up'
 
-    expect(page).to have_content('You have successfully signed up!')
+    expect(page).to have_content('You have signed up successfully.')
   end
 
   scenario 'Sign up error when invlid' do
@@ -20,9 +20,9 @@ RSpec.feature 'Sign up user' do
 
     fill_in 'Email', with: ''
     fill_in 'Password', with: ''
-    fill_in 'Confirm Password', with: ''
-    click_button 'Sign Up'
+    fill_in 'Password confirmation', with: ''
+    click_button 'Sign up'
 
-    expect(page).to have_content('You have not signed up successfully!')
+    expect(page).to have_content('error')
   end
 end
