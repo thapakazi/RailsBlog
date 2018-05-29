@@ -1,5 +1,8 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container {
+  margin-top: 20px;
+}
 
 .article-title {
   font-size: 2.5em;
@@ -28,3 +31,9 @@
 .edit-delete {
   margin-top: 20px;
 }
+
+form .actions {
+  display: flex;
+  justify-content: space-between;
+}
+
