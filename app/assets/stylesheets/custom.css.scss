@@ -35,5 +35,22 @@
 form .actions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+#error_explanation {
+  color: var(--danger);
+  padding: 10px;
+  border-radius: 5px;
+  background: #dc354591;
+  margin-bottom: 15px;
+}
+
+#error_explanation h2 {
+  font-size: 18px;
+}
+
+#error_explanation ul li {
+  font-size: 14px;
 }
 
