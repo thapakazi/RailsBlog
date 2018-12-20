@@ -23,6 +23,7 @@ class ArticlesController < ApplicationController
   end
 
   protected
+
   def resource_not_found
     message = 'The article you are looking for could not be found'
     flash[:alert] = message
@@ -30,6 +31,7 @@ class ArticlesController < ApplicationController
   end
 
   private
+
   def article_params
     params.require(:article).permit(:title, :body)
   end
