@@ -22,7 +22,23 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:success] = 'Article has been edited!'
+      redirect_to @article
+    else
+      flash.now[:danger] = 'Article could not be edited!'
+      render :edit
+    end
+  end
+
   protected
+
   def resource_not_found
     message = 'The article you are looking for could not be found'
     flash[:alert] = message
@@ -30,6 +46,7 @@ class ArticlesController < ApplicationController
   end
 
   private
+
   def article_params
     params.require(:article).permit(:title, :body)
   end
